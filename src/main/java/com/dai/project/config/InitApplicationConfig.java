@@ -1,31 +1,47 @@
 package com.dai.project.config;
 
-import com.dai.project.model.Shop;
-import com.dai.project.model.Tarife;
-import com.dai.project.repository.TarifeRepository;
+import com.dai.project.Mocks;
+import com.dai.project.model.Camera;
+import com.dai.project.model.Facilitate;
+import com.dai.project.model.Rezervare;
+import com.dai.project.repository.CameraRepo;
+import com.dai.project.repository.FacilitateRepo;
+import com.dai.project.repository.RezervareRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.EventListener;
-import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
 @Slf4j
 public class InitApplicationConfig {
 
     @Autowired
-    private TarifeRepository tarifeRepository;
+    private CameraRepo cameraRepo;
+
+    @Autowired
+    private RezervareRepo rezervareRepo;
+
+    @Autowired
+    private FacilitateRepo facilitateRepo;
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
-
-        tarifeRepository.save(Tarife.builder().id(1L).description("Camera dubla*** cu baie proprie, tv, internet, minibar ").price("100 RON").build());
-        tarifeRepository.save(Tarife.builder().id(2L).description("Camera single*** cu baie proprie, tv, internet, minibar ").price("80 RON").build());
-        tarifeRepository.save(Tarife.builder().id(3L).description("Camera dubla*** cu baie proprie, tv, internet, minibar ").price("120 RON").build());
-        tarifeRepository.save(Tarife.builder().id(4L).description("Camera single*** cu baie proprie, tv, internet, minibar  ").price("95 RON").build());
+        List<Camera> cameraList = Mocks.getSomeTarife();
+        for(Camera t: cameraList)
+            cameraRepo.save(t);
         log.info("Baza de date initializata");
+        log.info(cameraRepo.findAll().toString());
+        List<Facilitate> facilitates=new ArrayList<>();
+
+        facilitates.add( facilitateRepo.save(Facilitate.builder().name("nume").price(20.0).build()));
+        Rezervare rezervare=Rezervare.builder().personName("Mihai").camera(cameraList.get(0)).period("perioada...").facilitate(facilitates).build();
+        rezervare=rezervareRepo.save(rezervare);
+        log.info(rezervare.toString());
     }
 
 }

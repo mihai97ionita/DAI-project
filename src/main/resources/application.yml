@@ -4,7 +4,7 @@ spring:
   datasource:
     password: root
     platform: postgres
-    url: jdbc:postgresql://database:5432/postgres?createDatabaseIfNotExist=true
+    url: jdbc:postgresql://${DATABASE}:5432/postgres?createDatabaseIfNotExist=true
     username: postgres
   jpa:
     database: POSTGRESQL
