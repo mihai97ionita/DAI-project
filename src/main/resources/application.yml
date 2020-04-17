@@ -1,0 +1,20 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    password: root
+    platform: postgres
+    url: jdbc:postgresql://database:5432/postgres?createDatabaseIfNotExist=true
+    username: postgres
+  jpa:
+    database: POSTGRESQL
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: false

@@ -1,0 +1,233 @@
+/* Stylesheet Pensiunea Iulia */
+a {
+	text-decoration: none;
+}
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('../fonts/quicksand-regular-webfont.eot');
+    src: url('../fonts/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand-regular-webfont.woff') format('woff'),
+         url('../fonts/quicksand-regular-webfont.ttf') format('truetype'),
+         url('../fonts/quicksand-regular-webfont.svg#quicksandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+	background-image:url(../img/bg3.png);
+	margin: 0;
+}
+/*------------------------------ CONTAINER ------------------------------*/
+#container {
+	background-color: #2E0B00;
+	height: 120px;
+	border-bottom: 1px ridge #fff;
+	padding: 32px 0 20px;
+}
+#container > div {
+	width: 940px;
+	margin: 0 auto;
+	padding: 0px 10px 10px;
+	text-align: center;
+}
+/** Navigation **/
+#navigation {
+	display: inline-block;
+	height: 65px;
+	list-style: none;
+	margin:0 auto;
+	padding: 0;
+}
+#navigation li {
+	float: left;
+	margin:0 13px;
+}
+#navigation li:first-child {
+	margin-left: 0;
+}
+#navigation li a {
+	color: #ffffff;
+	font-family: "quicksandregular";
+	font-size: 15px;
+	padding: 17px ;
+	text-transform: uppercase;
+}
+#navigation li a:hover, #navigation li.selected a {
+	color: #ffc947;
+}
+/*------------------------------ CONTENTS ------------------------------*/
+#contents {
+	background-position: -961px top;
+	background-repeat: repeat-y;
+	width: 970px;
+	margin: 0 auto;
+}
+
+#contents div.body {
+	background-position: 1px top;
+	display: inline-block;
+	padding: 10px 10px 0;
+}
+#contents p {
+	color: #626161;
+	font-size: 14px;
+	line-height: 24px;
+	margin: 0;
+	padding: 0 0 24px;
+	text-align: justify;
+}
+/** Adbox **/
+#adbox {
+	width: 900px;
+	border-color: #fff;
+	border-width: 1px;
+	border-style:none solid solid;
+	margin: -10px 0 0;
+}
+#adbox span.info {
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+	position: absolute;
+	left: 330px;
+	bottom: 25px;
+}
+#adbox span.info em {
+	display: block;
+	font-size: 24px;
+	font-style: normal;
+}
+#adbox div.details {
+	padding: 15px 10px;
+}
+#adbox div.details h1 {
+	color: #b7a98c;
+	font-family: "quicksandregular";
+	font-size: 22px;
+	margin: 0 0 15px;
+	text-align: left;
+	text-shadow: 1px 1px #324621;
+}
+#adbox div.details p {
+	color: #b7a98c;
+	font-size: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/** Contact **/
+#contact form {
+	float:left;
+	padding: 10px 200px 10px;
+}
+#contact form label {
+	color: #626161;
+	display: block;
+	font-size: 14px;
+	line-height: 24px;
+}
+#contact form input {
+	color: #626161;
+	font-size: 13px;
+	height: 27px;
+	line-height: 27px;
+	width: 440px;
+	border: 3px solid #af8112;
+	margin: 0 0 12px;
+}
+#contact form input.btn1 {
+	color: #966a01;
+	cursor: pointer;
+	height: 34px;
+	line-height: 34px;
+	width: 109px;
+	border: 0;
+	padding: 0 0 2px;
+	text-transform: uppercase;
+}
+#contact form input.textarea {
+	color: #626161;
+	font-size: 14px;
+	height: 158px;
+	line-height: 24px;
+	width: 440px;
+	border: 3px solid #af8112;
+	margin: 0 0 12px;
+	overflow: auto;
+	resize: none;
+}
+.harta {
+	position:relative;
+	right:100px;
+}
+/*------------------------------ FOOTER ------------------------------*/
+
+.btn1 {
+	cursor: pointer;
+	font: 18px "quicksandregular";
+	text-decoration: none;
+	color: #966a01;
+	display: block;
+	height: 42px;
+}
+
+/** Navigation **/
+#footer {
+	border-top: 1px dashed #ffffff;
+	padding: 5px 0 10px;
+}
+#footer p {
+	color: #4b3a33;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+#footer > div {
+	width: 940px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+#footer .posts {
+	float: left;
+	height: 300px;
+	width: 302px;
+	padding: 0;
+}
+#footer .posts li {
+	width: 276px;
+	margin: 0 0 30px;
+	padding-left: 10px;
+}
+#footer .posts p a {
+	line-height: 24px;
+	margin: -3px 0 3px;
+}
+#footer ul.navigation {
+	float: right;
+	display: inline-block;
+	line-height: 24px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#footer ul.navigation li {
+	float: left;
+	margin-left: 15px;
+}
+#footer ul.navigation li:first-child {
+	margin-left: 0;
+}
+#footer ul.navigation li a {
+	color: #ab7d0f;
+	font: 11px "quicksandregular";
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#footer ul.navigation li a:hover {
+	color: #626161;
+}
+#footer #footnote {
+	float:left;
+	color: #ab7d0f;
+	font: 11px/24px "Quicksandregular";
+	margin: 0;
+	text-transform: uppercase;
+}
