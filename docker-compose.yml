@@ -10,18 +10,21 @@ services:
       POSTGRES_DB: postgres
     ports:
       - "5432:5432"
-#  java:
-#    image:  java
-#    build: "."
-#    container_name: java
-#    environment:
-#      DATABASE: database
-#    ports:
-#      - "9090:9090"
-#  TODO frontend in container
-#  web:
-#    image:  web
-#    build: "./website/"
-#    container_name: web
-#    ports:
-#      - "80:80"
+  nginx_auth:
+    image:  nginx_auth
+    build: "./nginx_auth/"
+    container_name: nginx_auth
+    ports:
+      - "80:80"
+    depends_on:
+      - java
+  java:
+    image: java
+    #build: "."
+    container_name: java
+    environment:
+      DATABASE: database
+    ports:
+      - "9090:9090"
+    depends_on:
+      - database
