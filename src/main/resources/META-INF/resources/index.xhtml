@@ -1,37 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<title>PrimeFaces Hello World Example</title>
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<!--<link rel="stylesheet" type="text/css" href="META-INF/resources/css/global.css"/>-->
+	<link type="text/css" rel="stylesheet" href="global.css" media="all"/>
 </h:head>
 
+
 <h:body>
-	<h:form id="helloworld-form">
-
-		<p:panel header="PrimeFaces Hello World Example">
-			<h:panelGrid columns="2" cellpadding="4">
-				<h:outputText value="First Name: " />
-				<p:inputText id="first-name" value="#{helloWorld.firstName}" />
-
-				<h:outputText value="Last Name: " />
-				<p:inputText id="last-name" value="#{helloWorld.lastName}" />
-
-				<p:commandButton id="submit" value="Submit"
-								 update="greeting-panel"
-								 oncomplete="PF('greetingDialog').show()" />
-			</h:panelGrid>
-		</p:panel>
-
-		<p:dialog header="Greeting" widgetVar="greetingDialog"
-				  modal="true" resizable="false">
-			<h:panelGrid id="greeting-panel" columns="1" cellpadding="4">
-				<h:outputText value="#{helloWorld.showGreeting()}" />
-			</h:panelGrid>
-		</p:dialog>
-
-	</h:form>
+<!--Container-->
+	<div id="container">
+		<div>
+			<div id="logo">
+				<img src="icon2.png" alt="icon"/>
+			</div>
+			<ul id="navigation">
+				<li class="selected">
+					<a href="indexDemo.xhtml">Acasa</a>
+				</li>
+				<li>
+					<a href="despre.xhtml">Despre</a>
+				</li>
+				<li>
+					<a href="tarife.xhtml">Tarife</a>
+				</li>
+				<li>
+					<a href="imprejurimi.xhtml">Imprejurimi</a>
+				</li>
+				<li>
+					<a href="galerie.xhtml">Galerie</a>
+				</li>
+				
+				<li>
+					<a href="contact.xhtml">Contact</a>
+				</li>
+			</ul>
+		</div>
+<!--Contents-->
+	<div id="contents">
+		<div>
+			<div class="body">
+				<!--<div id="adbox">-->
+					<div class="details">
+						<h1 style="color:#966a01">Bine ati venit!</h1>
+						<p>
+						Amplasamentul pensiunii, pe drumul spre Poiana Brasov, usor accesibil, este ideal atat pentru cei care doresc sa viziteze obiectivele turistice ale orasului vechi, cat si pentru cei care vor sa se bucure de aerul curat de munte, Pensiunea Iulia fiind pozitionata intr-o zona plina de verdeata, iar gradina proprie de peste 2000 de mp amenajata cu sute de tufe de trandafiri, soiuri de conifere, meri si peri reprezinta o atractie in sine.<br/>
+						<br/>
+						Deosebit de atractive sunt si serviciile restaurantului nostru, clasificat la 3 stele si renumit printre gurmanzi, datorita produselor proaspete, a ingredientelor de calitate dar si a unor retete inedite: salau cu raci, muschi de vita cu sos de nuci, coaste de porc marinate in wisky, terina de ciocolata alba cu fructe de padure. Pe langa acestea mai gasiti si multe preparate internationale, dar nu sunt uitati nici iubitorii mancarurilor “ca la mama acasa”, avand in meniu si preparate traditionale romanesti. Toate acestea pot fii acompaniate de un vin pe masura, existand in vinoteca noastra nenumarate soiuri, chiar si din struguri eco.<br/>
+						<br/>
+						Pasiunea noastra pentru mancare se reflecta si in calitatea micului dejun, oaspetii nostri putand alege dintre mai multe variante de meniu: <br/>
+						• cel romanesc: omleta/ochiuri, mezeluri, branzeturi, legume, lactate<br/>
+						• cel englezesc (cu precomanda de seara): ochiuri, bacon prajit, sote de ciuperci, fasole boabe cu sos de rosii, sau<br/>
+						• meniul sanatos: lapte/iaurt, cereale de mai multe tipuri, fructe. <br/>
+						Oricare dintre variantele de meniu este insotit de o cafea de foarte buna calitate facuta la esspressor profesionist, sortimente variate de ceai si dulceturi de casa.<br/>
+						<br/>
+					    Aceia dintre dvs. care doresc nu doar sa isi incante papilele gustative, ci sa isi bucure ochii cu o priveliste minunata asupra Brasovului, muntelui Tampa si sa respire aer curat, terasa noastra va sta la dispozitie tot timpul anului fiind acoperita si dotata cu un sistem de incalzire extrem de eficient, cu radianti de exterior.<br/>
+						<br/>
+						Incheiem prezentarea Pensiunii Iulia cu o trasatura, care nu este poate foarte vizibila ochiului clientului, dar care este definitorie locului, si anume biodiversitatea pe care o sprijinim prin cateva masuri: netratarea cu chimicale a florilor si a pomilor, colectarea selectiva a deseurilor menajare, predarea uleiului uzat pentru obtinerea de combustibil si nu deversarea acestuia in mediul inconjurator.
+					    </p>
+					<a href="contact.xhtml" class="btn1">Rezerva acum!</a> 
+					</div>
+				<!--</div>-->
+				<div class="contact">
+					<p>
+						Pensiunea Iulia, Brasov 500122, Str. Stejerisului nr. 15<br/>Tel/Fax : +40.268.476.436
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--Footer-->
+	<div id="footer">
+		<div>
+			<ul class="navigation">
+				<li>
+					<a href="indexDemo.xhtml">Acasa</a>
+				</li>
+				<li>
+					<a href="despre.xhtml">Despre</a>
+				</li>
+				<li>
+					<a href="tarife.xhtml">Tarife</a>
+				</li>
+				<li>
+					<a href="imprejurimi.xhtml">Imprejurimi</a>
+				</li>
+				<li>
+					<a href="galerie.xhtml">Galerie</a>
+				</li>
+			
+				<li>
+					<a href="contact.xhtml">Contact</a>
+				</li>
+			</ul>
+			<p id="footnote">
+				© Copyright 2023. All Rights Reserved.
+			</p>
+		</div>
+	</div>
+	</div>
 </h:body>
+
 </html>

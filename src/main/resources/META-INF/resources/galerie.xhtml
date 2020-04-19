@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="global.css"/>
+    <script type="text/javascript" src="jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="jcarousellite_1.0.1.js"></script>
+    <script type="text/javascript" src="jquery.easing.1.1.js"></script>
+</head>
+<body>
+<!--Container-->
+<div id="container">
+    <div>
+        <div id="logo">
+            <img src="icon2.png" alt="icon"/>
+        </div>
+        <ul id="navigation">
+            <li>
+                <a href="index.xhtml">Acasa</a>
+            </li>
+            <li>
+                <a href="despre.xhtml">Despre</a>
+            </li>
+            <li>
+                <a href="tarife.xhtml">Tarife</a>
+            </li>
+            <li>
+                <a href="imprejurimi.xhtml">Imprejurimi</a>
+            </li>
+            <li class="selected">
+                <a href="galerie.xhtml">Galerie</a>
+            </li>
+
+            <li>
+                <a href="contact.xhtml">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!--Contents-->
+    <div id="contents">
+        <div>
+            <div class="body">
+                <!--<div id="adbox">-->
+                <div class="details">
+                    <h1 style="color:#966a01">Galerie</h1>
+
+                    <div class="carousel">
+
+                        <div class="next"></div>
+
+                        <div class="prev"></div>
+
+                        <ul>
+
+                            <li><img src="fatada.mica.jpg" alt="1" width="275"
+                                     height="180"/></li>
+
+                            <li><img src="pensiunea_verde_intrare.jpg" alt="2"
+                                     width="275" height="180"/></li>
+
+                            <li><img
+                                    src="pensiunea_verde_gratar_si_cuptor_lemne.jpg"
+                                    alt="3" width="275" height="180"/></li>
+
+                            <li><img
+                                    src="pensiunea_verde_detaliu_camera_de_zi.jpg"
+                                    alt="4" width="275" height="180"/></li>
+
+                            <li><img src="living.jpg" alt="4" width="275"
+                                     height="180"/></li>
+
+                            <li><img
+                                    src="pensiunea_verde_terasa_parter_ansamblu.jpg"
+                                    alt="4" width="275" height="180"/></li>
+
+                            <li><img
+                                    src="pensiunea_verde_acces_terasa_parter.jpg"
+                                    alt="4" width="275" height="180"/></li>
+
+                            <li><img src="camera1.jpg" alt="4" width="275"
+                                     height="180"/></li>
+                        </ul>
+                    </div>
+                    <script type="text/javascript">
+                        $(".carousel").jCarouselLite({
+                            btnNext: ".next",
+                            btnPrev: ".prev",
+                            auto: 2800,
+                            speed: 500,
+                        });
+                    </script>
+                    <br/>
+                    <a href="contact.xhtml" class="btn1">Rezerva acum!</a>
+                </div>
+                <!--</div>-->
+                <div class="contact">
+                    <p>
+                        Pensiunea Iulia, Brasov 500122, Str. Stejerisului nr. 15<br/>Tel/Fax : +40.268.476.436
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div id="footer">
+        <div>
+            <ul class="navigation">
+                <li>
+                    <a href="index.xhtml">Acasa</a>
+                </li>
+                <li>
+                    <a href="despre.xhtml">Despre</a>
+                </li>
+                <li>
+                    <a href="tarife.xhtml">Tarife</a>
+                </li>
+                <li>
+                    <a href="imprejurimi.xhtml">Imprejurimi</a>
+                </li>
+                <li>
+                    <a href="galerie.xhtml">Galerie</a>
+                </li>
+
+                <li>
+                    <a href="contact.xhtml">Contact</a>
+                </li>
+            </ul>
+            <p id="footnote">
+                © Copyright 2023. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
