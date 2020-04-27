@@ -3,15 +3,16 @@
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<head>
+<h:head>
 	<title></title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<link rel="stylesheet" type="text/css" href="global.css"/>
-</head>
+</h:head>
 
-<body>
+<h:body>
 <!--Container-->
 	<div id="container">
 		<div>
@@ -55,6 +56,38 @@
 								Mobil :    +40.744.354.231 
 								Mail : <b class="email">info@pensiuneaiulia.com</b>
 							</p>
+						<h:form>
+							<p:panel id="panel" header="New User">
+
+								<p:messages id="msgs" />
+
+								<h:panelGrid columns="3" cellpadding="5">
+									<p:outputLabel for="name" value="Nume: " />
+									<p:inputText id="name" value="#{userView.name}" required="true" label="Name">
+										<f:validateLength minimum="2" />
+									</p:inputText>
+									<p:message for="name" display="icon" />
+
+									<p:outputLabel for="mail" value="Mail: " />
+									<p:inputText id="mail" value="#{userView.mail}" label="Mail" required="true">
+										<f:validateLength minimum="2" />
+										<p:ajax update="msgMail" event="keyup" />
+									</p:inputText>
+									<p:message for="mail" id="msgMail" display="icon" />
+
+									<p:outputLabel for="period" value="Period: " />
+									<p:inputText id="period" value="#{userView.period}" label="Period" required="true">
+										<f:validateLength minimum="2" />
+										<p:ajax update="msgPeriod" event="keyup" />
+									</p:inputText>
+									<p:message for="period" id="msgPeriod" display="icon" />
+
+								</h:panelGrid>
+
+								<p:commandButton value="Save" update="panel" action="#{userView.save}" icon="pi pi-check" />
+							</p:panel>
+
+						</h:form>
 							<iframe class="harta"  width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brasov+500122,+Str.+Stejerisului+nr.+15&amp;aq=&amp;sll=45.645218,25.589218&amp;sspn=0.019441,0.042014&amp;ie=UTF8&amp;hq=&amp;hnear=Strada+Stejeri%C8%99ului,+Bra%C8%99ov,+Romania&amp;t=m&amp;ll=45.645608,25.588188&amp;spn=0.028802,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
 					<p>
 							<br/>
@@ -106,5 +139,5 @@
 		</div>
 	</div>
 	</div>
-</body>
+</h:body>
 </html>
