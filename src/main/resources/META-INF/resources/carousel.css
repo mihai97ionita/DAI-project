@@ -1,0 +1,28 @@
+li{list-style-type:none;}
+
+.carousel {
+    margin:auto;
+    width:600px;
+    height:180px;
+    padding-top:50px;
+}
+
+.prev {
+    position:absolute;
+    top:55px;
+    z-index:100;
+    background-image:url(btn_PREV.png);
+    width:38px;
+    height:140px;
+}
+
+.next {
+    position:absolute;
+    left:788px;
+    top:55px;
+    z-index:100;
+    background-image:url(btn_NEXT.png);
+    width:38px;
+    height:140px;
+}
+

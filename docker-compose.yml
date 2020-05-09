@@ -9,15 +9,15 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: postgres
     ports:
-      - "5432:5432"
-#  nginx_auth:
-#    image:  nginx_auth
-#    build: "./nginx_auth/"
-#    container_name: nginx_auth
-#    ports:
-#      - "80:80"
-#    depends_on:
-#      - java
+      - "5435:5432"
+  nginx_auth:
+    image:  nginx_auth
+    build: "./nginx_auth/"
+    container_name: nginx_auth
+    ports:
+      - "80:80"
+   depends_on:
+      - java
 #  java:
 #    image: java
 #    #build: "."

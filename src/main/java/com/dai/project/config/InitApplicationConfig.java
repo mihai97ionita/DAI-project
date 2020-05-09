@@ -1,6 +1,5 @@
 package com.dai.project.config;
 
-import com.dai.project.Mocks;
 import com.dai.project.model.Camera;
 import com.dai.project.model.Facilitate;
 import com.dai.project.model.Rezervare;
@@ -31,17 +30,21 @@ public class InitApplicationConfig {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
-        List<Camera> cameraList = Mocks.getSomeTarife();
+        List<Camera> cameraList = DataProvider.getAvailableRooms();
         for(Camera t: cameraList)
             cameraRepo.save(t);
+        List<Facilitate> FacilitateList=DataProvider.getAvailableFacilities();
+        for(Facilitate f: FacilitateList)
+            facilitateRepo.save(f);
+
         log.info("Baza de date initializata");
         log.info(cameraRepo.findAll().toString());
         List<Facilitate> facilitates=new ArrayList<>();
 
-        facilitates.add( facilitateRepo.save(Facilitate.builder().name("nume").price(20.0).build()));
-        Rezervare rezervare=Rezervare.builder().personName("Mihai").camera(cameraList.get(0)).period("perioada...").facilitate(facilitates).build();
-        rezervare=rezervareRepo.save(rezervare);
-        log.info(rezervare.toString());
+//        facilitates.add( facilitateRepo.save(Facilitate.builder().name("nume").price(20.0).build()));
+//        Rezervare rezervare=Rezervare.builder().personName("Mihai").camera(cameraList.get(0)).period("perioada...").facilitate(facilitates).build();
+//        rezervare=rezervareRepo.save(rezervare);
+//        log.info(rezervare.toString());
     }
 
 }

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="global.css"/>
+</h:head>
+
+<h:body>
+    <!--Container-->
+    <div id="container">
+        <div>
+            <div id="logo">
+                <img src="icon2.png" alt="icon"/>
+            </div>
+            <ul id="navigation">
+                <li>
+                    <a href="index.xhtml">Acasa</a>
+                </li>
+                <li>
+                    <a href="despre.xhtml">Despre</a>
+                </li>
+                <li>
+                    <a href="tarife.xhtml">Tarife</a>
+                </li>
+                <li>
+                    <a href="imprejurimi.xhtml">Imprejurimi</a>
+                </li>
+                <li>
+                    <a href="galerie.xhtml">Galerie</a>
+                </li>
+                <li class="selected">
+                    <a href="contact.xhtml">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!--Contents-->
+        <div id="contents">
+            <div>
+                <div class="body">
+                    <!--<div id="adbox">-->
+                    <div class="details">
+                        <h1 style="color:#966a01">Contact</h1>
+                        <div class="body" id="contact">
+                            <p>
+                                Pensiunea Iulia<br/>
+                                Brasov 500122, Str. Stejerisului nr. 15<br/>
+                                GPS : 45.644267N 25.57866E<br/>
+                                Tel/Fax : +40.268.476.249<br/>
+                                Mobil : +40.744.354.231
+                                Mail : <b class="email">info@pensiuneaiulia.com</b>
+                            </p>
+                            <h:form>
+                                <p:panel id="panel" header="Cere rezervare">
+
+                                    <p:messages id="msgs"/>
+
+                                    <h:panelGrid columns="3" cellpadding="9">
+                                        <p:outputLabel for="name" value="Nume: "/>
+                                        <p:inputText id="name" value="#{userView.name}" required="true" label="Name">
+                                            <f:validateLength minimum="2"/>
+                                        </p:inputText>
+                                        <p:message for="name" display="icon"/>
+
+                                        <p:outputLabel for="mail" value="Mail: "/>
+                                        <p:inputText id="mail" value="#{userView.mail}" label="Mail" required="true">
+                                            <f:validateLength minimum="2"/>
+                                            <p:ajax update="msgMail" event="keyup"/>
+                                        </p:inputText>
+                                        <p:message for="mail" id="msgMail" display="icon"/>
+
+                                        <p:outputLabel for="period" value="Period: "/>
+                                        <p:inputText id="period" value="#{userView.period}" label="Period"
+                                                     required="true">
+                                            <f:validateLength minimum="2"/>
+                                            <p:ajax update="msgPeriod" event="keyup"/>
+                                        </p:inputText>
+                                        <p:message for="period" id="msgPeriod" display="icon"/>
+
+                                        <p:outputLabel for="camera" value="Camera: "/>
+                                        <p:selectOneMenu id="camera" value="#{userView.camera}" style="width:150px" required="true">
+                                            <f:selectItem itemLabel="Selecteaza Camera" itemValue=""
+                                                          noSelectionOption="false"/>
+                                            <f:selectItems value="#{userView.camere}"/>
+                                        </p:selectOneMenu>
+
+                                        <p:growl id="msg"/>
+
+                                        <p:selectBooleanCheckbox value="#{userView.micDejun}" itemLabel="Mic Dejun">
+                                            <p:ajax update="msg" listener="#{userView.addMessage}"/>
+                                        </p:selectBooleanCheckbox>
+                                        <br/><br/>
+                                        <p:selectBooleanCheckbox value="#{userView.patSuplimentar}"
+                                                                 itemLabel="Pat Suplimentar">
+                                            <p:ajax update="msg" listener="#{userView.addMessage}"/>
+                                        </p:selectBooleanCheckbox>
+
+
+                                    </h:panelGrid>
+
+                                    <p:commandButton value="Trimite" update="panel" action="#{userView.save}"
+                                                     icon="pi pi-check"/>
+                                </p:panel>
+
+                            </h:form>
+                            <p>
+                                <br/>
+                                » Pentru rezervari va rugam apelati-ne la numarul de mai sus; <br/>
+                                &nbsp;&nbsp; persoana de contact - Iulia Moroianu.<br/>
+                                <br/>
+
+                            </p>
+                        </div>
+
+                        <a href="contact.xhtml" class="btn1">Rezerva acum!</a>
+                    </div>
+                    <!--</div>-->
+                    <div class="contact">
+                        <p>
+                            Pensiunea Iulia, Brasov 500122, Str. Stejerisului nr. 15<br/>Tel/Fax : +40.268.476.436
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        <div id="footer">
+            <div>
+                <ul class="navigation">
+                    <li>
+                        <a href="index.xhtml">Acasa</a>
+                    </li>
+                    <li>
+                        <a href="despre.xhtml">Despre</a>
+                    </li>
+                    <li>
+                        <a href="tarife.xhtml">Tarife</a>
+                    </li>
+                    <li>
+                        <a href="imprejurimi.xhtml">Imprejurimi</a>
+                    </li>
+                    <li>
+                        <a href="galerie.xhtml">Galerie</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.xhtml">Contact</a>
+                    </li>
+                </ul>
+                <p id="footnote">
+                    © Copyright 2023. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>
