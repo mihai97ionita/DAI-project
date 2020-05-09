@@ -31,7 +31,7 @@ public class Rezervare {
     @OneToOne(fetch = FetchType.EAGER)
     private Camera camera;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy="rezervare")
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Facilitate> facilitate;
 
 }
