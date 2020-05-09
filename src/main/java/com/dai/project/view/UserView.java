@@ -1,11 +1,21 @@
 package com.dai.project.view;
 
+import com.dai.project.model.Camera;
+import com.dai.project.model.Facilitate;
+import com.dai.project.model.Rezervare;
+import com.dai.project.service.CamereService;
+import com.dai.project.service.FacilitatiService;
+import com.dai.project.service.RezervareService;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Named
@@ -15,6 +25,15 @@ public class UserView {
     private String name;
     private String mail;
     private String period;
+
+    @Autowired
+    CamereService camereService;
+
+    @Autowired
+    FacilitatiService facilitatiService;
+
+    @Autowired
+    RezervareService rezervareService;
 
     public String getName() {
         return name;
@@ -41,8 +60,19 @@ public class UserView {
     }
 
     public void save() {
+        List<Facilitate> facilitateList=new ArrayList<>();
+        if(micDejun)
+            facilitateList.add(facilitatiService.micDejun());
+        if(patSuplimentar)
+            facilitateList.add(facilitatiService.patSuplimentar());
+        if(!micDejun && !patSuplimentar)
+            facilitateList.add(facilitatiService.noFacilitate());
+        Camera room=camereService.findByName(camera);
+        System.out.println(facilitateList+"facilitati salvete");
+        Rezervare r=rezervareService.createNewRezervare(room,name,mail,period,facilitateList);
         FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage("Am inregistrat cererea ta,  " + name));
+
     }
 
     private String camera;
@@ -50,11 +80,10 @@ public class UserView {
 
     @PostConstruct
     public void init() {
+        List<Camera> listOfCamere=camereService.getRooms();
         camere = new HashMap<String, String>();
-        camere.put("Camera dubla ***", "Camera dubla ***");
-        camere.put("Camera single ***", "Camera single ***");
-        camere.put("Camera dubla ****", "Camera dubla ****");
-        camere.put("Camera single ****", "Camera single ****");
+        for(Camera c:listOfCamere)
+            camere.put(c.getDescription(),c.getDescription());
     }
 
     public void setCamera(String camera) {

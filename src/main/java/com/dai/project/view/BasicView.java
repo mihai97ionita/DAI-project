@@ -23,7 +23,7 @@ public class BasicView implements Serializable {
 
     @PostConstruct
     public void init() {
-        rezervares = service.createRezervares(3);
+        rezervares = service.getRezervares();
     }
 
     public List<Rezervare> getRezervares() {
