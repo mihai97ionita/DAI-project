@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Builder
@@ -24,6 +25,6 @@ public class Facilitate {
     @Column
     private Double price;
 
-    @ManyToOne
-    private Rezervare rezervare;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Rezervare> rezervare;
 }
