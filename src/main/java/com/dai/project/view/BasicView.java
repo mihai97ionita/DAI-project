@@ -2,6 +2,8 @@ package com.dai.project.view;
 
 import com.dai.project.model.Rezervare;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
@@ -14,6 +16,7 @@ import java.util.List;
 public class BasicView implements Serializable {
 
     private List<Rezervare> rezervares;
+    private String id;
 
     @Inject
     private RezervareViewService service;
@@ -29,5 +32,18 @@ public class BasicView implements Serializable {
 
     public void setService(RezervareViewService service) {
         this.service = service;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void save() {
+        System.out.println(getId());
+        getRezervares().remove(Integer.parseInt(getId()) - 1);
     }
 }

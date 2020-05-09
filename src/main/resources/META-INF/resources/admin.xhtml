@@ -3,7 +3,7 @@
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+	  xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
 	<title></title>
@@ -25,25 +25,6 @@
 				<li class="selected">
 					<a href="admin.xhtml">Administrare</a>
 				</li>
-				<!--<li class="selected">
-					<a href="indexDemo.xhtml">Acasa</a>
-				</li>
-				<li>
-					<a href="despre.xhtml">Despre</a>
-				</li>
-				<li>
-					<a href="tarife.xhtml">Tarife</a>
-				</li>
-				<li>
-					<a href="imprejurimi.xhtml">Imprejurimi</a>
-				</li>
-				<li>
-					<a href="galerie.xhtml">Galerie</a>
-				</li>
-
-				<li>
-					<a href="contact.xhtml">Contact</a>
-				</li>-->
 			</ul>
 		</div>
 	</div>
@@ -80,6 +61,15 @@
 									<h:outputText value="#{rezervare.facilitate.get(0).name}" />
 								</p:column>
 							</p:dataTable>
+
+							<h:form>
+
+								<h3 style="color:#966a01">Sterge rezervarile gestionate dupa ID: </h3>
+
+								<p:inputText id="id" value="#{dtBasicView.id}" required="true" label="ID" />
+								<br/><br/>
+								<p:commandButton value="Trimite" update="panel" action="#{dtBasicView.save}" icon="pi pi-check" ajax="false"/>
+							</h:form>
 					    </p>
 
 				<!--</div>-->
@@ -94,27 +84,6 @@
 <!--Footer-->
 	<div id="footer">
 		<div>
-			<ul class="navigation">
-				<li>
-					<a href="indexDemo.xhtml">Acasa</a>
-				</li>
-				<li>
-					<a href="despre.xhtml">Despre</a>
-				</li>
-				<li>
-					<a href="tarife.xhtml">Tarife</a>
-				</li>
-				<li>
-					<a href="imprejurimi.xhtml">Imprejurimi</a>
-				</li>
-				<li>
-					<a href="galerie.xhtml">Galerie</a>
-				</li>
-			
-				<li>
-					<a href="contact.xhtml">Contact</a>
-				</li>
-			</ul>
 			<p id="footnote">
 				© Copyright 2023. All Rights Reserved.
 			</p>
