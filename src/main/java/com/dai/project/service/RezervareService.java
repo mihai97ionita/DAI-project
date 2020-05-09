@@ -35,8 +35,7 @@ public class RezervareService {
    public void delete(Long id)
    {
        Optional<Rezervare> rezervare=re.findById(id);
-       if(!rezervare.isPresent())
-           throw new DataNotFoundException(Rezervare.class.getSimpleName());
-       re.delete(rezervare.get());
+       if(rezervare.isPresent())
+        re.delete(rezervare.get());
    }
 }

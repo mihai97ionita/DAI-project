@@ -43,7 +43,19 @@ public class BasicView implements Serializable {
     }
 
     public void save() {
-        System.out.println(getId());
-        getRezervares().remove(Integer.parseInt(getId()) - 1);
+        boolean ok=true;
+        try
+        {
+            Long longID=Long.parseLong(getId());
+        }
+        catch (Exception e)
+        {
+            ok=false;
+            FacesContext.getCurrentInstance().addMessage(null,
+                    new FacesMessage("Erroare ID-ul trebuie din lista de ID-uri si un numar"));
+        }
+        if(ok)
+            service.delete(Long.parseLong(getId()));
+        rezervares=service.getRezervares();
     }
 }

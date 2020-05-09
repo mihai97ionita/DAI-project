@@ -24,4 +24,9 @@ public class RezervareViewService {
         return rezervareService.getReservations();
     }
 
+    public void delete(Long id)
+    {
+        rezervareService.delete(id);
+    }
+
 }
