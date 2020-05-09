@@ -27,10 +27,9 @@ public class FileDownloadView {
     }
 
     public FileDownloadView() throws Exception {
-        File fileName = new File("src/main/resources/META-INF/resources/oferta.pdf");
-        InputStream input = new FileInputStream(fileName);
+        InputStream input = getClass().getResourceAsStream("/META-INF/resources/oferta.pdf");
         ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-        setFile(new DefaultStreamedContent(input, externalContext.getMimeType(fileName.getName()), fileName.getName()));
+        setFile(new DefaultStreamedContent(input,"pdf", "oferta.pdf"));
         System.out.println("PREP = " + file.getName());
     }
 }

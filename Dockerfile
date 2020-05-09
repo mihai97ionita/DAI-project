@@ -3,4 +3,5 @@ COPY ./ ./
 RUN mvn package
 FROM adoptopenjdk/openjdk8:latest
 COPY --from=builder /target/dai.jar /opt/dai.jar
+EXPOSE 9090
 ENTRYPOINT ["java","-jar","-Dserver.port=9090","/opt/dai.jar"]

@@ -6,3 +6,4 @@ FROM joelnb/nginx-digest
 COPY --from=builder nginx.conf /etc/nginx/conf/nginx.conf
 RUN cat /etc/nginx/conf/nginx.conf
 EXPOSE 80
+ENTRYPOINT sleep 25 && nginx
