@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<!--<link rel="stylesheet" type="text/css" href="META-INF/resources/css/global.css"/>-->
+	<link type="text/css" rel="stylesheet" href="global.css" media="all"/>
+</h:head>
+
+
+<h:body>
+<!--Container-->
+	<div id="container">
+		<div>
+			<div id="logo">
+				<img src="icon2.png" alt="icon"/>
+			</div>
+			<ul id="navigation">
+				<li class="selected">
+					<a href="admin.xhtml">Administrare</a>
+				</li>
+				<!--<li class="selected">
+					<a href="indexDemo.xhtml">Acasa</a>
+				</li>
+				<li>
+					<a href="despre.xhtml">Despre</a>
+				</li>
+				<li>
+					<a href="tarife.xhtml">Tarife</a>
+				</li>
+				<li>
+					<a href="imprejurimi.xhtml">Imprejurimi</a>
+				</li>
+				<li>
+					<a href="galerie.xhtml">Galerie</a>
+				</li>
+
+				<li>
+					<a href="contact.xhtml">Contact</a>
+				</li>-->
+			</ul>
+		</div>
+	</div>
+<!--Contents-->
+	<div id="contents">
+		<div>
+			<div class="body">
+				<!--<div id="adbox">-->
+					<div class="details">
+						<h1 style="color:#966a01">Bine ati venit!</h1>
+						<p>
+							<p:dataTable var="rezervare" value="#{dtBasicView.rezervares}">
+								<p:column width="12" headerText="ID">
+									<h:outputText value="#{rezervare.id}" />
+								</p:column>
+
+								<p:column headerText="Nume Client">
+									<h:outputText value="#{rezervare.personName}" />
+								</p:column>
+
+								<p:column width="250" headerText="Mail de Contact">
+									<h:outputText value="#{rezervare.personMail}" />
+								</p:column>
+
+								<p:column headerText="Perioada ceruta">
+									<h:outputText value="#{rezervare.period}" />
+								</p:column>
+
+								<p:column headerText="Camera">
+									<h:outputText value="#{rezervare.camera.description}" />
+								</p:column>
+
+								<p:column headerText="Nume Facilitate">
+									<h:outputText value="#{rezervare.facilitate.get(0).name}" />
+								</p:column>
+							</p:dataTable>
+					    </p>
+
+				<!--</div>-->
+				<div class="contact">
+					<p>
+						Pensiunea Iulia, Brasov 500122, Str. Stejerisului nr. 15<br/>Tel/Fax : +40.268.476.436
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--Footer-->
+	<div id="footer">
+		<div>
+			<ul class="navigation">
+				<li>
+					<a href="indexDemo.xhtml">Acasa</a>
+				</li>
+				<li>
+					<a href="despre.xhtml">Despre</a>
+				</li>
+				<li>
+					<a href="tarife.xhtml">Tarife</a>
+				</li>
+				<li>
+					<a href="imprejurimi.xhtml">Imprejurimi</a>
+				</li>
+				<li>
+					<a href="galerie.xhtml">Galerie</a>
+				</li>
+			
+				<li>
+					<a href="contact.xhtml">Contact</a>
+				</li>
+			</ul>
+			<p id="footnote">
+				© Copyright 2023. All Rights Reserved.
+			</p>
+		</div>
+	</div>
+	</div>
+</h:body>
+
+</html>
